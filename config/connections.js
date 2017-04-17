@@ -45,7 +45,7 @@ module.exports.connections = {
      adapter: 'sails-mysql',
      host: 'localhost',
      user: 'GafferEG', //optional
-     password: 'pwgaffer', //optional
+     password: 'gafferpw', //optional
      database: 'gaffer_academy' //optional
    },
 

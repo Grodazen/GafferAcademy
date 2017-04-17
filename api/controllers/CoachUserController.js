@@ -6,6 +6,10 @@
  */
 
 module.exports = {
-	
+
+  register: function(req,res){
+    res.view();
+  }
+
 };
 

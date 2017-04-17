@@ -9,24 +9,25 @@ module.exports = {
 
   attributes: {
     firstName: {
-      type: 'string'
-      required: true
+      type: 'string',
+      required: true,
     },
 
     lastName: {
-      type: 'string'
+      type: 'string',
       required: true
     },
 
-    email: {
-      type: 'string'
-      email: true
-      required: true
+    emailAddress: {
+      type: 'string',
+      email: true,
+      required: true,
     },
 
     password: {
-      type
-    }
+      type: 'string',
+      required: true,
+    },
 
   }
 };
