@@ -37,7 +37,7 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/anonymous node/sails user/GafferAcademy.git"
+    "url": "git://github.com/Grodazen/GafferAcademy/GafferAcademy.git"
   },
   "author": "anonymous node/sails user",
   "license": ""
