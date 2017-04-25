@@ -1,0 +1,22 @@
+<h1>User Signup Form</h1>
+
+<form action="/coachUser/register" method="POST" class="form-group">
+  <h2 class="form-group-lg">Opprett ein konto</h2>
+
+  <label for="fn">Fornavn:</label>
+  <input id="fn" type="text" class="form-control" placeholder="Skriv inn ditt fornamn her" name="fornamn">
+
+  <label for="en">Etternavn:</label>
+  <input id="en" type="text" class="form-control" placeholder="Skriv inn ditt etternamn her" name="etternamn">
+
+  <label for="email">Epostadresse:</label>
+  <input id="email" type="email" class="form-control" placeholder="Skriv inn din epostadresse her" name="email">
+
+  <label for="pw">Passord:</label>
+  <input id="pw" type="password" class="form-control" placeholder="Skriv inn ditt ønska passord her" name="password">
+  <input type="password" class="form-control" placeholder="Vennligst bekreft ønska passord" name="confirmation">
+  <br />
+
+  <input type="submit" class="btn-lg btn-primary btn-block" value="Opprett konto"/>
+  <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+</form>

@@ -10,7 +10,7 @@ module.exports = {
   attributes: {
     firstName: {
       type: 'string',
-      required: true,
+      required: true
     },
 
     lastName: {
@@ -22,12 +22,13 @@ module.exports = {
       type: 'string',
       email: true,
       required: true,
+      unique: true
     },
 
-    password: {
+    encryptedPassword: {
       type: 'string',
-      required: true,
-    },
+      required: true
+    }
 
   }
 };
