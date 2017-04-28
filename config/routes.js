@@ -36,6 +36,10 @@ module.exports.routes = {
     view: 'static/index'
   }
 
+  //'/coachUser/register': {
+  //  view: 'coachUser/register'
+  //}
+
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
