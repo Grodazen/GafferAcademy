@@ -1,20 +1,42 @@
 <h1>User Signup Form</h1>
 
-<form action="/coachUser/register" method="POST" class="form-group">
+<%
+var flash = _.clone(req.flash('err'));
+if (flash.length > 0) { //Check for error existence
+  console.log(flash);
+%>
+<ul class="alert alert-success">
+  <% Object.keys(flash).forEach(function(err){%>
+  <li><%- JSON.stringify(flash[err]) %></li>
+  <% }); %>
+</ul>
+<% } %>
+
+<form action="/coach/create" method="POST" class="form-group" id="signupform">
   <h2 class="form-group-lg">Opprett ein konto</h2>
 
+
+  <div class="control-group">
   <label for="fn">Fornavn:</label>
-  <input id="fn" type="text" class="form-control" placeholder="Skriv inn ditt fornamn her" name="fornamn">
+  <input id="fn" type="text" class="form-control" placeholder="Skriv inn ditt fornamn her" name="firstname">
+  </div>
 
+  <div class="control-group">
   <label for="en">Etternavn:</label>
-  <input id="en" type="text" class="form-control" placeholder="Skriv inn ditt etternamn her" name="etternamn">
+  <input id="en" type="text" class="form-control" placeholder="Skriv inn ditt etternamn her" name="lastname">
+  </div>
 
+  <div class="control-group">
   <label for="email">Epostadresse:</label>
   <input id="email" type="email" class="form-control" placeholder="Skriv inn din epostadresse her" name="email">
+  </div>
 
+  <div class="control-group">
   <label for="pw">Passord:</label>
   <input id="pw" type="password" class="form-control" placeholder="Skriv inn ditt ønska passord her" name="password">
   <input type="password" class="form-control" placeholder="Vennligst bekreft ønska passord" name="confirmation">
+  </div>
+
   <br />
 
   <input type="submit" class="btn-lg btn-primary btn-block" value="Opprett konto"/>
