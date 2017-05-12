@@ -37,8 +37,8 @@ module.exports.routes = {
   },
 
   '/coach/register': {
-    //controller: 'CoachUserController',
-    //action: 'register',
+    controller: 'CoachUserController',
+    action: 'register',
     view: 'coach/register'
   },
 
