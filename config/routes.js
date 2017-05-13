@@ -34,18 +34,14 @@ module.exports.routes = {
 
   '/': {
     view: 'static/index'
-  },
+  }/*,
 
   '/coach/new': {
     //controller: 'CoachUserController',
     //action: 'register',
     view: 'coach/new'
-  },
+  }*/
 
-
-  '/coach/create': {
-    view: 'coach/show'
-  }
 
 
   /***************************************************************************

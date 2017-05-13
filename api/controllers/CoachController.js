@@ -1,10 +1,9 @@
 /**
- * CoachUserController
+ * CoachController
  *
- * @description :: Server-side logic for managing coachusers
+ * @description :: Server-side logic for managing Coaches
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
-
 
 module.exports = {
 
@@ -13,9 +12,9 @@ module.exports = {
   },
 
   create: function(req, res, next) {
-      // Create a User with the params sent from
-      // the sign-up form --> new.ejs
-    CoachUser.create(req.allParams(), function coachCreated(err, coach){
+    // Create a Coach with the params sent from
+    // the sign-up form --> new.ejs
+    Coach.create(req.allParams(), function coachCreated(err, coach){
 
       if (req.param("password") != req.param("confirmation")){
         return next("The password don't match. Please try again.");
@@ -34,7 +33,7 @@ module.exports = {
   },
 
   show: function(req, res) {
-    CoachUser.findone(req.param('id'), function foundCoach(err, coach){
+    Coach.findone(req.param('id'), function foundCoach(err, coach){
       if (err || !coach) return res.serverError(err);
 
       res.view({
@@ -44,9 +43,9 @@ module.exports = {
   },
 
   index: function (req, res) {
-    CoachUser.find(function foundUser(err, users) {
+    Coach.find(function foundCoach(err, coaches) {
       if (err) return res.serverError(err);
-      res.view({users: users})
+      res.view({coaches: coaches})
 
     });
   },
@@ -54,19 +53,19 @@ module.exports = {
   // render the edit view (e.g. /views/edit.ejs)
   edit: function(req, res) {
     // Find the user from the id passed in via params
-    CoachUser.findOne(req.param('id'), function foundUser (err, user) {
+    Coach.findOne(req.param('id'), function foundCoach (err, coach) {
       if (err) return res.serverError(err);
-      if (!user) return res.serverError(err);
+      if (!coach) return res.serverError(err);
 
       res.view({
-        user: user
+        coach: coach
       });
     });
   },
 
   // process the info from edit view
   update: function (req, res) {
-    CoachUser.update(req.param('id'), req.params.all(), function userUpdated (err) {
+    Coach.update(req.param('id'), req.params.all(), function coachUpdated (err) {
       if (err) {
         return res.redirect('/coach/edit/' + req.param('id'));
       }
@@ -77,12 +76,12 @@ module.exports = {
 
   destroy: function (req, res) {
 
-    CoachUser.findOne(req.param('id'), function foundUser (err, user) {
+    Coach.findOne(req.param('id'), function foundCoach (err, coach) {
       if (err) return res.serverError(err);
 
-      if (!user) res.serverError(err); //('User doesn\'t exist.');
+      if (!coach) res.serverError(err); //('User doesn\'t exist.');
 
-      CoachUser.destroy(req.param('id'), function userDestroyed(err) {
+      Coach.destroy(req.param('id'), function coachDestroyed(err) {
         if (err) return res.serverError(err);
       });
 

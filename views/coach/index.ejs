@@ -11,16 +11,16 @@
     </tr>
 
 
-    <% _.each(users, function(user) { %>
+    <% _.each(coaches, function(coach) { %>
     <tr data-id="<%= user.id %>" data-model="user">
-      <td><%= user.id %></td>
-      <td><%= user.name %></td>
-      <td><%= user.title %></td>
-      <td><%= user.email %></td>
-      <td><a href="/coach/show/<%= user.id %>" class="btn btn-sm btn-primary">Show</a></td>
-      <td><a href="/coach/edit/<%= user.id %>" class="btn btn-sm btn-warning">Edit</a></td>
+      <td><%= coach.id %></td>
+      <td><%= coach.firstname %></td>
+      <td><%= coach.lastname %></td>
+      <td><%= coach.email %></td>
+      <td><a href="/coach/show/<%= coach.id %>" class="btn btn-sm btn-primary">Show</a></td>
+      <td><a href="/coach/edit/<%= coach.id %>" class="btn btn-sm btn-warning">Edit</a></td>
 
-      <td><form action="/coach/destroy/<%= user.id %>" method="POST">
+      <td><form action="/coach/destroy/<%= coach.id %>" method="POST">
           <input type="hidden" name="_method" value="delete"/>
           <input type="submit" class="btn btn-sm btn-danger" value="Delete"/>
           <input type="hidden" name="_csrf" value="<%= _csrf %>" />
