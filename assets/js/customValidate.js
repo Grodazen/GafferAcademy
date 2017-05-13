@@ -27,14 +27,12 @@ $(document).ready(function () {
       confirmation: {
         minlength: 8,
         equalTo: "#password"
-      },
-
-      success: function (element) {
-        element
-          .text('OK!').addClass('valid')
       }
 
+    },
+    success: function (element) {
+      element
+        .text('OK!').addClass('valid')
     }
   });
-
 });

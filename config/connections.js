@@ -41,13 +41,13 @@ module.exports.connections = {
   *                                                                          *
   ***************************************************************************/
   //MySql server (localhost)
-  GafferAcademy_MySQLServer: {
+ GafferAcademy_MySQLServer: {
      adapter: 'sails-mysql',
      host: 'localhost',
      user: 'GafferEG', //optional
      password: 'gafferpw', //optional
      database: 'gaffer_academy' //optional
-   },
+   }
 
   /***************************************************************************
   *                                                                          *

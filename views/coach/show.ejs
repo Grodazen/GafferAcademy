@@ -1,4 +1,8 @@
-<h1><%= coach.firstName + coach.lastName%></h1>
-<hr>
-<h3>Email: <%= coach.emailAddress %></h3>
-<h4><%= coach.state %></h4>
+<div class='container'>
+  <h1><%= coach.firstname %> </h1>
+  <hr>
+  <h3>contact: <%- coach.email %> </h3>
+
+  <a class="btn btn-medium btn-primary" href="/coach/edit/<%= coach.id %>">Edit</a>
+
+</div>

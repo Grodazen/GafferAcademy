@@ -30,9 +30,13 @@ var jsFilesToInject = [
 
   // Dependencies like jQuery, or Angular are brought in here
   'js/dependencies/**/*.js',
+  'js/dependencies/socket.io.js',
 
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
+  'js/jQuery-3.2.1.js',
+  'js/jQuery.validate.min.js',
+
   'js/**/*.js'
 ];
 

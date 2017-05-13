@@ -1,4 +1,3 @@
-var values;
 /**
  * CoachUser.js
  *
