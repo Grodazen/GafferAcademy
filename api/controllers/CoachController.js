@@ -33,7 +33,7 @@ module.exports = {
   },
 
   show: function(req, res) {
-    Coach.findone(req.param('id'), function foundCoach(err, coach){
+    Coach.findOne(req.param('id'), function foundCoach(err, coach){
       if (err || !coach) return res.serverError(err);
 
       res.view({

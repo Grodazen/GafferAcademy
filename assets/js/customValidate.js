@@ -15,7 +15,6 @@ $(document).ready(function () {
 
       email: {
         required: true,
-        unique: true,
         email: true
       },
 
