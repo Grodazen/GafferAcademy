@@ -2,9 +2,15 @@
 <form action="/coach/update/<%= coach.id %>" method="POST" class="form-signin">
   <h2> Hey, you're editing a user... </h2>
 
-  <input value="<%= coach.firstname %>" name="name" type="text" class="form-control"/>
+  <input value="<%= coach.firstname %>" name="firstname" type="text" class="form-control"/>
+
+  <input value="<%= coach.lastname %>" name="lastname" type="text" class="form-control"/>
 
   <input value="<%= coach.email %>" name="email" type="text" class="form-control"/>
+
+  <input value="<%= coach.tlf %>" name="tlf" type="text" class="form-control"/>
+
+
   <input type="submit" value="Proceed" class="btn btn-lg btn-primary btn-block"/>
   <input type="hidden" name="_csrf" value="<%= _csrf %>" />
 </form>

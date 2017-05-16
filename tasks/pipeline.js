@@ -36,6 +36,7 @@ var jsFilesToInject = [
   // will be injected here in no particular order.
   'js/jQuery.js',
   'js/jQuery.validate.js',
+  'js/customValidate.js',
   'js/**/*.js'
 ];
 

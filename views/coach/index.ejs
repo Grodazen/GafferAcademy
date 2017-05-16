@@ -12,13 +12,14 @@
 
 
     <% _.each(coaches, function(coach) { %>
-    <tr data-id="<%= user.id %>" data-model="user">
+    <tr data-id="<%= coach.id %>" data-model="coach">
       <td><%= coach.id %></td>
       <td><%= coach.firstname %></td>
       <td><%= coach.lastname %></td>
+      <td><%= coach.tlf %></td>
       <td><%= coach.email %></td>
-      <td><a href="/coach/show/<%= coach.id %>" class="btn btn-sm btn-primary">Show</a></td>
-      <td><a href="/coach/edit/<%= coach.id %>" class="btn btn-sm btn-warning">Edit</a></td>
+      <td><a href="/coach/show/<%= coach.id %>" class="btn btn-sm btn-primary">Vis</a></td>
+      <td><a href="/coach/edit/<%= coach.id %>" class="btn btn-sm btn-warning">Endre</a></td>
 
       <td><form action="/coach/destroy/<%= coach.id %>" method="POST">
           <input type="hidden" name="_method" value="delete"/>

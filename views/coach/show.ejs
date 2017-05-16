@@ -1,7 +1,9 @@
 <div class='container'>
-  <h1><%= coach.firstname %> </h1>
+  <h1><%= coach.firstname + '&nbsp;' + coach.lastname %> </h1>
+
   <hr>
-  <h3>contact: <%- coach.email %> </h3>
+  <h3>Contact: <%- coach.tlf %> </h3>
+  <h3><%- coach.email %> </h3>
 
   <a class="btn btn-medium btn-primary" href="/coach/edit/<%= coach.id %>">Edit</a>
 
