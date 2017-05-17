@@ -2,7 +2,7 @@ $(document).ready(function () {
 
   //Validate
 
-  $('.form-signin').validate({
+  $('#signup-form').validate({
     rules: {
 
       firstname: {
