@@ -27,7 +27,17 @@ module.exports.policies = {
   ***************************************************************************/
 
 
-  '*': [true, 'flash']
+  '*': [true, 'flash'],
+
+  coach: {
+    'new': "flash",
+    subscribe: ["flash", "sessionAuth"],
+    create: "flash",
+    show: "coachCanSeeProfile",
+    edit: "coachCanSeeProfile",
+    update: "coachCanSeeProfile",
+    '*': "admin"
+  }
 
 
   /***************************************************************************
