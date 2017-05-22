@@ -31,7 +31,7 @@ module.exports.policies = {
 
   coach: {
     'new': "flash",
-    subscribe: ["flash", "sessionAuth"],
+    subscribe: ["flash", "authenticated"],
     create: "flash",
     show: "coachCanSeeProfile",
     edit: "coachCanSeeProfile",

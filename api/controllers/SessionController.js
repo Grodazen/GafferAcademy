@@ -72,7 +72,7 @@ module.exports = {
         }
 
         // Log user in
-        req.session.sessionAuth = true;
+        req.session.authenticated = true;
         req.session.Coach = coach;
 
         // Change status to online
