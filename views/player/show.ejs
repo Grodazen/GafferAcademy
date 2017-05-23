@@ -1,0 +1,10 @@
+<div class='container'>
+    <h1><%= player.firstname + '&nbsp;' + player.lastname %> </h1>
+
+    <hr>
+    <h3>Posisjon: <%= player.position %> </h3>
+    <h3><%= player.email %> </h3>
+
+    <a class="btn btn-medium btn-primary" href="/player/edit/<%= player.id %>">Edit</a>
+
+</div>

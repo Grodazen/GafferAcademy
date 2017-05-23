@@ -36,9 +36,8 @@ module.exports = {
     }
 
     // Try to find the user by there email address.
-    // findOneByEmail() is a dynamic finder in that it searches the model by a particular attribute.
     // Coach.findOneByEmail(req.param('email')).done(function(err, user) {
-    Coach.findOneByEmail(req.param('email'), function foundCoach(err, coach) {
+    Coach.findOne(req.param('email'), function foundCoach(err, coach) {
       if (err) return next(err);
 
       // If no user is found...
@@ -109,7 +108,7 @@ module.exports = {
       var coachId = req.session.Coach.id;
 
       if (coach) {
-        // The user is "logging out" (e.g. destroying the session) so change the online attribute to false.
+        // The coach is "logging out" (e.g. destroying the session) so change the online attribute to false.
         Coach.update(coachId, {
           online: false
         }, function(err) {

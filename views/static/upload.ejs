@@ -1,0 +1,29 @@
+<head>
+    <!-- -->
+    <meta name="csrf-token" content="XYZ123">
+</head>
+
+<body>
+
+<h2>Filopplasting</h2>
+
+<form id="upload" method="post" action="file/upload" class="dropzone" enctype="multipart/form-data">
+    <div class="fallback">
+        <input name="file" type="file" />
+    </div>
+</form>
+
+<div>
+    <script type="text/javascript">
+        Dropzone.options.uploadWidget = {
+            paramName: 'file',
+            maxFilesize: 10, // MB
+            maxFiles: 1,
+            dictDefaultMessage: 'Klikk for å velge fil til å laste opp',
+            headers: {
+                'x-csrf-token': document.querySelectorAll('meta[name=csrf-token]')[0].getAttributeNode('content').value
+            }
+        };
+    </script>
+</div>
+</body>

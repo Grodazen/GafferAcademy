@@ -3,6 +3,7 @@
  * Allow admins to see everyone
  */
 
+/*
 module.exports = function(req, res, ok) {
 
   var sessionUserMatchesId = req.session.Coach.id === req.param('id');
@@ -22,3 +23,4 @@ module.exports = function(req, res, ok) {
   ok();
 
 };
+*/

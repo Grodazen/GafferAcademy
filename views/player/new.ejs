@@ -1,0 +1,46 @@
+<form action="/player/create" method="POST" class="player-form" >
+    <h2 class="form-group-lg">Opprett spillerprofil</h2>
+
+
+    <div class="control-group">
+        <label for="firstname">Fornavn:</label>
+        <input id="firstname" type="text" class="form-control" placeholder="Fornamn her" name="firstname">
+    </div>
+
+    <div class="control-group">
+        <label for="lastname">Etternavn:</label>
+        <input id="lastname" type="text" class="form-control" placeholder="Etternamn her" name="lastname">
+    </div>
+
+    <div class="control-group">
+        <label for="email">Epostadresse:</label>
+        <input id="email" type="text" class="form-control" placeholder="Epostadresse her" name="email">
+    </div>
+
+    <div class="control-group">
+        <label for="birthday">Fødselsdato:</label>
+        <input id="birthday" type="text" class="form-control" placeholder="Fødselsdag" name="birthday">
+    </div>
+
+    <div class="control-group">
+        <label for="position">Posisjon:</label>
+        <select multiple id="position" class="form-control" placeholder="Posisjon" name="position">
+            <option id="keeper" value="Keeper">Keeper</option>
+            <option id="back" value="Sideback">Sideback</option>
+            <option id="central-defender" value="Midtstopper">Midtstopper</option>
+            <option id="defensive-midfielder" value="Defensiv midtbane">Defensiv midtbane</option>
+            <option id="central-midfielder" value="Sentral midtbane">Sentral midtbane</option>
+            <option id="offensive-midfielder" value="Offensiv midtbane">Offensiv midtbane</option>
+            <option id="box-box" value="Indreløper">Indreløper</option>
+            <option id="winger" value="Ving">Kant</option>
+            <option id="striker" value="Spiss">Spiss</option>
+        </select>
+
+    </div>
+
+
+    <br />
+
+    <input type="submit" class="btn-lg btn-primary btn-block" value="Opprett spillerprofil"/>
+    <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+</form>

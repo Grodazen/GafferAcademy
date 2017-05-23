@@ -31,6 +31,7 @@
     <!--STYLES-->
     <link rel="stylesheet" href="/styles/bootstrap-theme.css">
     <link rel="stylesheet" href="/styles/bootstrap.css">
+    <link rel="stylesheet" href="/styles/dropzone.css">
     <link rel="stylesheet" href="/styles/importer.css">
     <link rel="stylesheet" href="/styles/jumbotron.css">
     <!--STYLES END-->
@@ -46,7 +47,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/"> activityOverlord</a>
+        <a class="navbar-brand" href="/"> Gaffer Academy</a>
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
@@ -63,18 +64,6 @@
           <a class="btn btn-default navbar-btn navbar-right" href="/session/destroy">sign-out</a>
           <% } %>
         </div>
-        <% if (!session.authenticated) { %>
-        <form class="navbar-form navbar-right" action="/session/create">
-          <div class="form-group">
-            <input type="text" placeholder="Email" name="email" class="form-control">
-          </div>
-          <div class="form-group">
-            <input type="password" placeholder="Password" name="password" class="form-control">
-          </div>
-          <button type="submit" class="btn btn-success">Sign in</button>
-          <input type="hidden" name="_csrf" value="<%= _csrf %>" />
-        </form>
-        <% } %>
       </div>
     </div>
   </div>
@@ -138,6 +127,7 @@
     <script src="/js/jQuery.validate.js"></script>
     <script src="/js/customValidate.js"></script>
     <script src="/js/bootstrap.js"></script>
+    <script src="/js/dropzone.js"></script>
     <script src="/js/jQuery-3.2.1.js"></script>
     <script src="/js/underscore.js"></script>
     <!--SCRIPTS END-->

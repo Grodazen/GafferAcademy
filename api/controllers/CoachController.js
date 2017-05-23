@@ -14,9 +14,8 @@ module.exports = {
   create: function(req, res, next) {
 
     var coachObj = {
-      name: req.param('firstname' + '&nbsp;' + 'lastname'),
-      //firstname: req.param('firstname'),
-      //lastname: req.param('lastname'),
+      firstname: req.param('firstname'),
+      lastname: req.param('lastname'),
       email: req.param('email'),
       tlf: req.param('tlf'),
       password: req.param('password'),
@@ -39,7 +38,10 @@ module.exports = {
           // If error redirect back to sign-up page
           return res.redirect('/coach/new');
         }
+
+        res.redirect('/coach/show/' + coach.id);
   // Log user in
+        /*
       req.session.authenticated = true;
       req.session.Coach = coach;
 
@@ -49,23 +51,23 @@ module.exports = {
         if (err) return next(err);
 
         // add the action attribute to the user object for the flash message.
-        coach.action = " signed-up and logged-in."
+        //coach.action = " signed-up and logged-in."
 
         // Let other subscribed sockets know that the user was created.
         Coach.publishCreate(coach);
-
+        */
         // After successfully creating the user
         // redirect to the show action
 
-        res.redirect('/coach/show/' + coach.id);
-      });
+        //res.redirect('/coach/show/' + coach.id);
+      // });
     });
   },
 
   show: function(req, res, next) {
     Coach.findOne(req.param('id'), function foundCoach(err, coach){
       if (err) return next(err);
-      if (!user) return next();
+      if (!coach) return next();
 
       res.view({
         coach: coach
@@ -105,9 +107,10 @@ module.exports = {
 
     if (req.session.Coach.admin) {
       var coachObj = {
-        name: req.param('name'),
+        firstname: req.param('firstname'),
+        lastname: req.param('lastname'),
         email: req.param('email'),
-        admin: req.param('admin')
+        //admin: req.param('admin')
       }
     } else {
       var coachObj = {

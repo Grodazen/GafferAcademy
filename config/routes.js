@@ -40,6 +40,19 @@ module.exports.routes = {
     //controller: 'CoachUserController',
     //action: 'register',
     view: 'coach/new'
+  },
+
+  'player/new': {
+    view: 'player/new'
+  },
+
+  'GET /session/new': 'SessionController.new',
+  'POST /session/create': 'SessionController.create',
+
+  '/upload': {
+      //controller: 'FileController',
+      //action: 'upload',
+      view: 'static/upload'
   }
 
 

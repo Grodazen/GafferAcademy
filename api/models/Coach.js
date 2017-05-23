@@ -4,6 +4,7 @@
  * @description :: TODO: You might write a short summary of how this model works and what it represents here.
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
+var bcrypt = require('bcryptjs');
 
 module.exports = {
 
@@ -34,18 +35,31 @@ module.exports = {
     },
 
     encryptedPassword: {
+      type: 'string',
+      minLength: 8
+    },
+
+    /*lastLoggedIn: {
+      type: 'date',
+      required: true,
+      defaultsTo: new Date(0)
+    },
+
+    gravatarUrl: {
       type: 'string'
     },
+
 
     online: {
       type: 'boolean',
       defaultsTo: false
     },
 
+
     admin: {
       type: 'boolean',
       defaultsTo: false
-    },
+    },*/
 
     toJSON: function() {
       var obj = this.toObject();
@@ -58,6 +72,7 @@ module.exports = {
 
   },
 
+/*
   beforeValidation: function (values, next) {
     if (typeof values.admin !== 'undefined') {
       if (values.admin === 'unchecked') {
@@ -68,18 +83,19 @@ module.exports = {
     }
     next();
   },
-
+*/
     beforeCreate: function (values, next) {
       // This checks to make sure the password and password confirmation match before creating record
       if (!values.password || values.password != values.confirmation) {
         return next({err: ["Password doesn't match confirmation"]});
       }
 
-      require('bcryptjs').hash(values.password, 10, function passwordEncrypted(err, encryptedPassword) {
+      require('bcrypt').hash(values.password, 10, function passwordEncrypted(err, encryptedPassword) {
         if (err) return next(err);
         values.encryptedPassword = encryptedPassword;
         next();
       });
     }
+
 };
 

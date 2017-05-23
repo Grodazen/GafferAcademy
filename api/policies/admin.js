@@ -1,6 +1,7 @@
 /**
  * Allow any authenticated coach.
  */
+/*
 module.exports = function (req, res, ok) {
 
   // User is allowed, proceed to controller
@@ -18,3 +19,4 @@ module.exports = function (req, res, ok) {
     return;
   }
 };
+*/
